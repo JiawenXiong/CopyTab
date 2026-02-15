@@ -1,0 +1,375 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.container {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 600px;
+  padding: 32px;
+  min-width: 550px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+header h1 {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  color: #666;
+  font-size: 14px;
+}
+
+.section {
+  margin-bottom: 32px;
+}
+
+.section h2 {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 16px;
+}
+
+.section-desc {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+/* 通配符提示 */
+.wildcard-hint {
+  background: #e3f2fd;
+  border-left: 4px solid #2196f3;
+  padding: 12px 16px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+}
+
+.wildcard-hint p {
+  margin: 4px 0;
+  color: #1976d2;
+  font-size: 13px;
+}
+
+.wildcard-hint code {
+  background: rgba(255, 255, 255, 0.7);
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-family: monospace;
+  font-weight: bold;
+}
+
+.wildcard-examples {
+  color: #555 !important;
+  font-style: italic;
+}
+
+/* 快捷键配置 */
+.shortcut-current {
+  font-weight: bold;
+  color: #667eea;
+  background: #e9ecef;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-family: monospace;
+}
+
+.shortcut-info {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 16px 0;
+}
+
+.shortcut-text {
+  color: #666;
+  font-size: 14px;
+  margin: 0;
+}
+
+.shortcut-note {
+  color: #999;
+  font-size: 12px;
+  margin-top: 12px;
+  text-align: center;
+}
+
+/* 复制格式选择 */
+.format-options {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.format-option {
+  flex: 1;
+  cursor: pointer;
+}
+
+.format-option input[type="radio"] {
+  display: none;
+}
+
+.format-card {
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  transition: all 0.3s;
+  background: white;
+}
+
+.format-option:hover .format-card {
+  border-color: #bbb;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.format-option input[type="radio"]:checked + .format-card {
+  border-color: #667eea;
+  background: #f0f4ff;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+}
+
+.format-title {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.format-preview {
+  background: #f8f9fa;
+  border-radius: 4px;
+  padding: 8px;
+  font-size: 12px;
+  color: #666;
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  line-height: 1.6;
+}
+
+.format-preview div {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 添加网站输入 */
+.add-site {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.input {
+  flex: 1;
+  padding: 12px 16px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.input:focus {
+  border-color: #667eea;
+}
+
+/* 按钮样式 */
+.btn {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  outline: none;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn-primary {
+  background: #667eea;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #5568d3;
+}
+
+.btn-secondary {
+  background: #6c757d;
+  color: white;
+  width: 100%;
+}
+
+.btn-secondary:hover {
+  background: #5a6268;
+}
+
+.btn-success {
+  background: #28a745;
+  color: white;
+  width: 100%;
+  margin-top: 16px;
+}
+
+.btn-success:hover {
+  background: #218838;
+}
+
+/* 排除网站列表 */
+.sites-list {
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  max-height: 200px;
+  overflow-y: auto;
+  margin-bottom: 16px;
+}
+
+.site-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  border-bottom: 1px solid #ddd;
+  transition: background 0.2s;
+}
+
+.site-item:last-child {
+  border-bottom: none;
+}
+
+.site-item:hover {
+  background: #f8f9fa;
+}
+
+.site-url {
+  flex: 1;
+  font-size: 13px;
+  color: #333;
+  word-break: break-all;
+  margin-right: 12px;
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  line-height: 1.4;
+}
+
+.btn-delete {
+  background: #dc3545;
+  color: white;
+  padding: 6px 12px;
+  font-size: 12px;
+  border-radius: 4px;
+}
+
+.btn-delete:hover {
+  background: #c82333;
+}
+
+/* 操作按钮区域 */
+.actions {
+  margin-top: 16px;
+}
+
+/* 页脚 */
+footer {
+  text-align: center;
+  margin-top: 32px;
+  padding-top: 20px;
+  border-top: 1px solid #ddd;
+  color: #999;
+  font-size: 12px;
+}
+
+/* Toast 提示 */
+.toast {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  background: #333;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  opacity: 0;
+  transition: all 0.3s;
+  z-index: 1000;
+}
+
+.toast.show {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
+
+.toast.success {
+  background: #28a745;
+}
+
+.toast.error {
+  background: #dc3545;
+}
+
+/* 滚动条样式 */
+.sites-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.sites-list::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.sites-list::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.sites-list::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* 响应式 */
+@media (max-width: 600px) {
+  .container {
+    padding: 24px;
+  }
+
+  header h1 {
+    font-size: 24px;
+  }
+
+  .add-site {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CopyTab 配置</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>CopyTab 配置</h1>
+      <p class="subtitle">快速复制网页标题和链接</p>
+    </header>
+
+    <section class="section">
+      <h2>⌨️ 快捷键配置</h2>
+      <p class="section-desc">当前快捷键：<span class="shortcut-current">Alt + C</span></p>
+      
+      <div class="shortcut-info">
+        <p class="shortcut-text">在任意网页上按此快捷键即可复制标题和链接</p>
+      </div>
+      
+      <button id="openShortcutsBtn" class="btn btn-secondary">
+        🔧 修改快捷键
+      </button>
+      <p class="shortcut-note">💡 点击上方按钮将打开浏览器快捷键设置页面，在那里可以自定义快捷键</p>
+    </section>
+
+    <section class="section">
+      <h2>📋 复制格式配置</h2>
+      <p class="section-desc">选择复制内容的格式</p>
+      
+      <div class="format-options">
+        <label class="format-option">
+          <input type="radio" name="copyFormat" value="plain" checked>
+          <div class="format-card">
+            <div class="format-title">普通格式</div>
+            <div class="format-preview">
+              <div>网页标题</div>
+              <div>https://example.com</div>
+            </div>
+          </div>
+        </label>
+        
+        <label class="format-option">
+          <input type="radio" name="copyFormat" value="markdown">
+          <div class="format-card">
+            <div class="format-title">Markdown 格式</div>
+            <div class="format-preview">
+              <div>[网页标题](https://example.com)</div>
+            </div>
+          </div>
+        </label>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>🚫 排除网站列表</h2>
+      <p class="section-desc">这些网站将不会触发复制功能</p>
+      
+      <div class="wildcard-hint">
+        <p>💡 支持通配符 <code>*</code> 批量屏蔽网站</p>
+        <p class="wildcard-examples">例如：https://*.google.com 可屏蔽所有 google 子域名</p>
+      </div>
+      
+      <div class="add-site">
+        <input 
+          type="text" 
+          id="newSiteInput" 
+          placeholder="输入网站URL或通配符（例如：https://*.example.com）"
+          class="input"
+        >
+        <button id="addSiteBtn" class="btn btn-primary">
+          ➕ 添加
+        </button>
+      </div>
+
+      <div id="sitesList" class="sites-list">
+        <!-- 排除网站列表将在这里动态生成 -->
+      </div>
+
+      <div class="actions">
+        <button id="saveBtn" class="btn btn-success">
+          💾 保存配置
+        </button>
+      </div>
+    </section>
+
+    <footer>
+      <p>CopyTab v1.0.0</p>
+    </footer>
+  </div>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="options.js"></script>
+</body>
+</html>
