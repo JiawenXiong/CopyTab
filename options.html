@@ -3,42 +3,42 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CopyTab 配置</title>
+  <title data-i18n="configTitle">CopyTab 配置</title>
   <link rel="stylesheet" href="options.css">
 </head>
 <body>
   <div class="container">
     <header>
-      <h1>CopyTab 配置</h1>
-      <p class="subtitle">快速复制网页标题和链接</p>
+      <h1 data-i18n="configTitle">CopyTab 配置</h1>
+      <p class="subtitle" data-i18n="subtitle">快速复制网页标题和链接</p>
     </header>
 
     <section class="section">
-      <h2>⌨️ 快捷键配置</h2>
-      <p class="section-desc">当前快捷键：<span class="shortcut-current">Alt + C</span></p>
+      <h2 data-i18n="shortcutConfig">⌨️ 快捷键配置</h2>
+      <p class="section-desc"><span data-i18n="currentShortcut">当前快捷键：</span><span class="shortcut-current">Alt + C</span></p>
       
       <div class="shortcut-info">
-        <p class="shortcut-text">在任意网页上按此快捷键即可复制标题和链接</p>
+        <p class="shortcut-text" data-i18n="shortcutInfo">在任意网页上按此快捷键即可复制标题和链接</p>
       </div>
       
-      <button id="openShortcutsBtn" class="btn btn-secondary">
+      <button id="openShortcutsBtn" class="btn btn-secondary" data-i18n="modifyShortcut">
         🔧 修改快捷键
       </button>
-      <p class="shortcut-note">💡 点击上方按钮将打开浏览器快捷键设置页面，在那里可以自定义快捷键</p>
+      <p class="shortcut-note" data-i18n="shortcutNote">💡 点击上方按钮将打开浏览器快捷键设置页面，在那里可以自定义快捷键</p>
     </section>
 
     <section class="section">
-      <h2>📋 复制格式配置</h2>
-      <p class="section-desc">选择复制内容的格式</p>
+      <h2 data-i18n="copyFormatConfig">📋 复制格式配置</h2>
+      <p class="section-desc" data-i18n="selectFormat">选择复制内容的格式</p>
       
       <div class="format-options">
         <label class="format-option">
           <input type="radio" name="copyFormat" value="plain" checked>
           <div class="format-card">
-            <div class="format-title">普通格式</div>
+            <div class="format-title" data-i18n="plainFormat">普通格式</div>
             <div class="format-preview">
-              <div>网页标题</div>
-              <div>https://example.com</div>
+              <div data-i18n="plainFormatPreview1">网页标题</div>
+              <div data-i18n="plainFormatPreview2">https://example.com</div>
             </div>
           </div>
         </label>
@@ -46,9 +46,9 @@
         <label class="format-option">
           <input type="radio" name="copyFormat" value="markdown">
           <div class="format-card">
-            <div class="format-title">Markdown 格式</div>
+            <div class="format-title" data-i18n="markdownFormat">Markdown 格式</div>
             <div class="format-preview">
-              <div>[网页标题](https://example.com)</div>
+              <div data-i18n="markdownFormatPreview">[网页标题](https://example.com)</div>
             </div>
           </div>
         </label>
@@ -56,22 +56,23 @@
     </section>
 
     <section class="section">
-      <h2>🚫 排除网站列表</h2>
-      <p class="section-desc">这些网站将不会触发复制功能</p>
+      <h2 data-i18n="excludeSites">🚫 排除网站列表</h2>
+      <p class="section-desc" data-i18n="excludeSitesDesc">这些网站将不会触发复制功能</p>
       
       <div class="wildcard-hint">
-        <p>💡 支持通配符 <code>*</code> 批量屏蔽网站</p>
-        <p class="wildcard-examples">例如：https://*.google.com 可屏蔽所有 google 子域名</p>
+        <p data-i18n="wildcardHint">💡 支持通配符 <code>*</code> 批量屏蔽网站</p>
+        <p class="wildcard-examples" data-i18n="wildcardExample">例如：https://*.google.com 可屏蔽所有 google 子域名</p>
       </div>
       
       <div class="add-site">
         <input 
           type="text" 
           id="newSiteInput" 
+          data-i18n-placeholder="sitePlaceholder"
           placeholder="输入网站URL或通配符（例如：https://*.example.com）"
           class="input"
         >
-        <button id="addSiteBtn" class="btn btn-primary">
+        <button id="addSiteBtn" class="btn btn-primary" data-i18n="add">
           ➕ 添加
         </button>
       </div>
@@ -81,14 +82,14 @@
       </div>
 
       <div class="actions">
-        <button id="saveBtn" class="btn btn-success">
-          💾 保存配置
+        <button id="resetBtn" class="btn btn-danger" data-i18n="resetConfig">
+          🔄 恢复默认配置
         </button>
       </div>
     </section>
 
     <footer>
-      <p>CopyTab v1.0.0</p>
+      <p data-i18n="version">CopyTab v1.0.0</p>
     </footer>
   </div>
 
